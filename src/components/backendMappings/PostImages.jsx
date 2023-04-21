@@ -21,7 +21,6 @@ export default function PostImages(){
         e.preventDefault();
 
         const formData = new FormData();
-        formData.append('id', inputData.id);
         formData.append('name', inputData.name);
         formData.append('image', image);
     
