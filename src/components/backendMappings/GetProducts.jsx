@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Product from "./Product";
-
+import base_url from "../baseurls/baseurl.js";
 function GetProducts(){
 
     const [userData, setData] = useState();
 
     useEffect(()=>{
-        axios.get("http://localhost:8080/gallery/product/get")
+        axios.get(`${base_url}/gallery/product/get`)
         .then((response)=>{
             console.log(response);
             setData(response.data);

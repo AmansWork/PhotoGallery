@@ -5,14 +5,14 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ImageCard from "./ImageCard";
-
+import base_url from "../baseurls/baseurl.js";
 
 
 export default function GetImages() {
     const [imageObject, setImageObject] = useState();
 
     useEffect(() => {
-        axios.get("http://localhost:8080/gallery/image")
+        axios.get(`${base_url}/gallery/image`)
             .then((response) => {
                 console.log(response.data);
                 setImageObject(response.data);

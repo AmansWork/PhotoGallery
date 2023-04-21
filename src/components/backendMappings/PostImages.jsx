@@ -1,7 +1,7 @@
 import  axios from "axios";
 import { useState } from "react";
 import { Button } from 'react-bootstrap';
-
+import base_url from "../baseurls/baseurl";
 export default function PostImages(){
 
     const data = {id : "", name : ""};
@@ -24,7 +24,7 @@ export default function PostImages(){
         formData.append('name', inputData.name);
         formData.append('image', image);
     
-        axios.post("http://localhost:8080/gallery/image", formData)
+        axios.post(`${base_url}/gallery/image`, formData)
         .then((response) =>{
             console.log(response);
             alert("Image added successfully")
@@ -36,7 +36,7 @@ export default function PostImages(){
 
     const handleChange = (e)=>{
         e.preventDefault();
-        axios.put("http://localhost:8080/gallery/image", inputData)
+        axios.put(`${base_url}/gallery/image`, inputData)
         .then((response)=>{
             console.log(response);
         })
@@ -49,7 +49,7 @@ export default function PostImages(){
    
     const handleDelete = (e)=>{
         e.preventDefault();
-        axios.delete(`http://localhost:8080/gallery/image/${inputData.id}`)
+        axios.delete(`${base_url}/gallery/image/${inputData.id}`)
         .then((response)=>{
             console.log(response);
         })

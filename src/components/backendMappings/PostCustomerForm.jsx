@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Button } from 'react-bootstrap';
+import base_url from "../baseurls/baseurl.js";
 function PostCustomerForm() {
 
     const data = { customerId: "", name: "", phoneNo: "", address: "" };
@@ -12,7 +13,7 @@ function PostCustomerForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:8080/gallery/customer", inputData)
+        axios.post(`${base_url}/gallery/customer`, inputData)
             .then((response) => {
                 console.log(response);
             })
@@ -23,7 +24,7 @@ function PostCustomerForm() {
 
     const handleChange = (e) => {
         e.preventDefault();
-        axios.put("http://localhost:8080/gallery/customer", inputData)
+        axios.put(`${base_url}/gallery/customer`, inputData)
             .then((response) => {
                 console.log(response);
             })
@@ -36,7 +37,7 @@ function PostCustomerForm() {
 
     const handleDelete = (e) => {
         e.preventDefault();
-        axios.delete(`http://localhost:8080/gallery/customer/${inputData.customerId}`)
+        axios.delete(`${base_url}/gallery/customer/${inputData.customerId}`)
             .then((response) => {
                 console.log(response);
             })

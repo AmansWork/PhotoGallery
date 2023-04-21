@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Button } from 'react-bootstrap';
+import base_url from "../baseurls/baseurl.js";
 
 function CustomerForm() {
 
@@ -13,7 +14,7 @@ function CustomerForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:8080/gallery/customer", inputData)
+        axios.post(`${base_url}/gallery/customer`, inputData)
             .then((response) => {
                 console.log(response);
                 alert("Your Information has been saved.");

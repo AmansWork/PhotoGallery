@@ -1,6 +1,7 @@
 import  axios from "axios";
 import { useState } from "react";
 import { Button } from 'react-bootstrap';
+import base_url from "../baseurls/baseurl";
 export default function PostProduct(){
 
     const data = {productId : "", productName : "", productPrice : "", productDescription : ""};
@@ -12,7 +13,7 @@ export default function PostProduct(){
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        axios.post("http://localhost:8080/gallery/product/add", inputData)
+        axios.post(`${base_url}/gallery/product/add`, inputData)
         .then((response) =>{
             console.log(response);
         })
@@ -23,7 +24,7 @@ export default function PostProduct(){
 
     const handleChange = (e)=>{
         e.preventDefault();
-        axios.put("http://localhost:8080/gallery/product/change", inputData)
+        axios.put(`${base_url}/gallery/product/change`, inputData)
         .then((response)=>{
             console.log(response);
         })
@@ -36,7 +37,7 @@ export default function PostProduct(){
    
     const handleDelete = (e)=>{
         e.preventDefault();
-        axios.delete(`http://localhost:8080/gallery/product/delete/${inputData.productId}`)
+        axios.delete(`${base_url}/gallery/product/delete/${inputData.productId}`)
         .then((response)=>{
             console.log(response);
         })
