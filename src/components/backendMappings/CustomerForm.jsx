@@ -29,13 +29,13 @@ function CustomerForm() {
 
         <>
             <div className='card col d-flex justify-content-center mx-auto' style={{width: "15rem" }}>
-                <label htmlFor="">Enter Customer Name:</label>
+                <label htmlFor="">Enter Name:</label>
                 <input type="text" name='name' value={inputData.name} onChange={handleData} />
                 <br />
-                <label htmlFor="">Enter Customer Phone Number:</label>
+                <label htmlFor="">Enter Phone Number:</label>
                 <input type="text" name='phoneNo' value={inputData.phoneNo} onChange={handleData} />
                 <br />
-                <label htmlFor="">Enter Customer Adress:</label>
+                <label htmlFor="">Enter Adress:</label>
                 <input type="text" name='address' value={inputData.address} onChange={handleData} />
                 <br />
                 <div>

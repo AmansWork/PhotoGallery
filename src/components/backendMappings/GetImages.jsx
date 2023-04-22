@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ImageCard from "./ImageCard";
 import base_url from "../baseurls/baseurl.js";
-
+import HomeAboutCards from "../homeRelatedAbouts/HomeAboutCards";
 
 export default function GetImages() {
     const [imageObject, setImageObject] = useState();
@@ -56,9 +56,19 @@ export default function GetImages() {
         >
             {imageObject ? imageObject.map(setImage) : null}
         </Slider>
-
+        
+        <br />
+        <br />
+        <HomeAboutCards />
+        <br />
+        <br />
         <div style={{ paddingTop: '20px' }} className='row'>
             {imageObject ? imageObject.slice(0, 4).map(setImageInCard) : null}
         </div>
+        <br />
+        <br />
+        {imageObject ? imageObject.slice(0, 2).map(setImage) : null}
+
+
     </>);
 }

@@ -63,9 +63,9 @@ export default function PostProduct(){
                     <input type="text" name='productDescription' value={inputData.productDescription} onChange={handleData}/>
                     <br />
                     <div>
-                        <Button className="mr-3  btn-block btn-success" onClick={handleSubmit}>Submit</Button>
-                        <Button className="mr-3  btn-block " onClick={handleChange}>Update</Button>
-                        <Button className="mr-3  btn-block btn-danger" onClick={handleDelete}>Delete</Button>
+                        <Button className="mr-3  btn btn-success" onClick={handleSubmit}>Submit</Button>
+                        <Button className="mr-3  btn " onClick={handleChange}>Update</Button>
+                        <Button className="mr-3  btn btn-danger" onClick={handleDelete}>Delete</Button>
                     </div>
                 </div>
     </>);

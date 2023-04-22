@@ -1,11 +1,11 @@
 import CustomerForm from "../backendMappings/CustomerForm";
-export default function Contact(){
+export default function Contact() {
     return (<>
-        <div>
-            <h1>Contact Us</h1>
-        </div>
-        <div>
-            <CustomerForm />
+        <div class="jumbotron jumbotron-fluid" style={{backgroundColor:"white"}}>
+            <h1 style={{textAlign:"center"}}>Contact Us</h1>
+            <div>
+                <CustomerForm />
+            </div>
         </div>
 
     </>);
