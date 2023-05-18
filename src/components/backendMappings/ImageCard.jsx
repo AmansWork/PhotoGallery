@@ -1,9 +1,10 @@
-import Card from 'react-bootstrap/Card';
 export default function ImageCard(props) {
 
     return (<>
 
-        <div key={props.id}>
+
+    
+        {/* <div key={props.id}>
             <Card>
 
                 <img style={{ height: 'auto', maxHeight: '500px', minHeight: '300px' }}
@@ -11,7 +12,7 @@ export default function ImageCard(props) {
                     alt={props.name} />
 
             </Card>
-        </div>
+        </div> */}
 
     </>);
 }

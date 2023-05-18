@@ -1,48 +1,27 @@
 import Product from "./Product";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
+import { useState } from "react";
+import { Button } from 'react-bootstrap';
 
 function CustomerCard(props) {
 
+    const [products, setProduct] = useState(false);
+
+    function showproduct(){
+        setProduct(!products);
+    }
     return <>
-        <Container style={{padding: '10px'}} >
-            <Row className="object-fit-contain border">
+        <div class="card" style={{width: "15rem"}}>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{props.customerId}</li>
+                <li class="list-group-item">{props.name}</li>
+                <li class="list-group-item">{props.phoneNo}</li>
+                <li class="list-group-item">{props.address}</li>
 
-                <Col sm={3} className="object-fit-contain border">
-                    <div>
-                        <h6>Customer Id: </h6>
-                    </div>
-                    <div>
-                        <h6>Customer Name: </h6>
-                    </div>
-                    <div>
-                        <h6>Customer Phone: </h6>
-                    </div>
-                    <div>
-                        <h6>Customer Address: </h6>
-                    </div>
-                </Col>
-                <Col sm={9} className="object-fit-contain border">
-                    <div>
-                        <h6>{props.customerId}</h6>
-                    </div>
-                    <div>
-                        <h6>{props.name}</h6>
-                    </div>
-                    <div>
-                        <h6>{props.phoneNo}</h6>
-                    </div>
-                    <div>
-                        <h6>{props.address}</h6>
-                    </div>
-                </Col>
-                {props.product ? props.product.map(createProduct) : null}
-            </Row>
-        </Container>
+                <Button class="btn btn-primary" onClick={showproduct}>Show Products</Button>
 
-
+               {products? props.product.map(createProduct) : null}
+            </ul>
+        </div>
 
     </>
 

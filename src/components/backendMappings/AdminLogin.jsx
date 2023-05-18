@@ -103,38 +103,37 @@ export default function AdminLogin() {
             setcustomerData(false);
         }
         return (<>
+
+            <div className="container text-center">
+                <div class="row">
+                    <div className="col">
+                        <Button className="mr-3 btn-block" onClick={showcustomerData}>Customers</Button>
+                    </div>
+                    <div className="col">
+                        <Button className="mr-3 btn-block btn-danger" onClick={showproductData}> Products  </Button>
+                    </div>
+                    <div className="col">
+                        <Button className="mr-3 btn-block btn-success" onClick={showAddProductData}>Add Products </Button>
+                    </div>
+                    <div>
+                        <Button className="mr-3 btn-block btn-warning" onClick={addImageButton}>Add Image </Button>
+                    </div>
+                    <div className="col">
+                        <Button className="mr-3 btn-block btn-info" onClick={addCustomerButton}>Add Customer </Button>
+                    </div>
+                    <div className="col">
+                        <Button className="mr-3 btn-block btn-warning" onClick={showImageAdmin}> Images </Button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
             <Container style={{ padding: '10px' }}>
                 <Row className="object-fit-contain" >
 
-                    <Col style={{ padding: '10px' }} sm={2} className="object-fit-contain border border-info-subtle">
-                        <div>
-                            <Button className="mr-3 btn-block" onClick={showcustomerData}>show Customers</Button>
-                        </div>
-                        <br />
-                        <div>
-                            <Button className="mr-3 btn-block btn-danger" onClick={showproductData}>show Products  </Button>
-                        </div>
-                        <br />
-                        <div>
-                            <Button className="mr-3 btn-block btn-success" onClick={showAddProductData}>Add Products </Button>
-                        </div>
-                        <br />
-                        <div>
-                            <Button className="mr-3 btn-block btn-warning" onClick={addImageButton}>Add Image </Button>
-                        </div>
-                        <br />
-                        <div>
-                            <Button className="mr-3 btn-block btn-info" onClick={addCustomerButton}>Add Customer </Button>
-                        </div>
-                        <br />
-
-                        <div>
-                            <Button className="mr-3 btn-block btn-warning" onClick={showImageAdmin}>Show Images </Button>
-                        </div>
-                        <br />
-
-                    </Col>
-                    <Col sm={10} className="object-fit-contain border border-info-subtle">
+                    <Col >
                         <div>
                             {customerData ? <GetCustomer /> : null}
                         </div>
@@ -168,21 +167,21 @@ export default function AdminLogin() {
     function AdminForm() {
         return (
             <>
-            <div className="jumbotron jumbotron-fluid" style={{backgroundColor:"white"}}>
-                <h1 style={{textAlign:"center"}}>Login to View Data</h1>
-                <br />
-                <br />
-                <div className='card col d-flex justify-content-center mx-auto' style={{ width: "14rem" }}>
-                    <label htmlFor="">Enter Id: </label>
-                    <input type="text" name='userName' value={inputData.userName} onChange={handleData} />
+                <div className="jumbotron jumbotron-fluid" style={{ backgroundColor: "white" }}>
+                    <h1 style={{ textAlign: "center" }}>Login to View Data</h1>
                     <br />
-                    <label htmlFor="">Enter Password: </label>
-                    <input type="password" name='password' value={inputData.password} onChange={handleData} />
                     <br />
-                    <div>
-                        <Button className="mr-3 btn-block btn-success" onClick={handleSubmit}>Submit</Button>
+                    <div className='card col d-flex justify-content-center mx-auto' style={{ width: "14rem" }}>
+                        <label htmlFor="">Enter Id: </label>
+                        <input type="text" name='userName' value={inputData.userName} onChange={handleData} />
+                        <br />
+                        <label htmlFor="">Enter Password: </label>
+                        <input type="password" name='password' value={inputData.password} onChange={handleData} />
+                        <br />
+                        <div>
+                            <Button className="mr-3 btn-block btn-success" onClick={handleSubmit}>Submit</Button>
+                        </div>
                     </div>
-                </div>
                 </div>
             </>
         );

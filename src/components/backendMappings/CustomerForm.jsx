@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Button } from 'react-bootstrap';
 import base_url from "../baseurls/baseurl.js";
+import GetProducts from "./GetProducts.jsx";
 
 function CustomerForm() {
 
@@ -40,8 +41,9 @@ function CustomerForm() {
                 <br />
                 <div>
                     <Button className="mr-3  btn-block btn-success" onClick={handleSubmit}>Submit</Button>
-                </div>
+                </div>  
             </div>
+            <GetProducts/>
         </>
 
     );
